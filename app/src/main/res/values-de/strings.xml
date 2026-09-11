@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Stapik Budgeting Mobile</string>
+
+    <string name="connect_title">Mit Stapik Cloud verbinden</string>
+    <string name="connect_server_url_label">Server-URL</string>
+    <string name="connect_api_key_label">API-Schlüssel</string>
+    <string name="connect_save_button">Speichern &amp; verbinden</string>
+    <string name="connect_testing">Verbindung wird hergestellt…</string>
+    <string name="connect_error_prefix">Verbindung fehlgeschlagen: %1$s</string>
+    <string name="connect_stale_warning">Gespeichert, aber der Server war nicht erreichbar — zeige zwischengespeicherte Daten.</string>
+    <string name="connect_show_api_key">Anzeigen</string>
+    <string name="connect_hide_api_key">Verbergen</string>
+
+    <string name="settings_content_description">Verbindungseinstellungen</string>
+
+    <string name="budget_no_entries">Keine Einträge in diesem Zeitraum</string>
+    <string name="budget_no_periods">Noch keine Budgetzeiträume</string>
+    <string name="budget_filter_all_years">Alle Jahre</string>
+    <string name="budget_filter_all_types">Alle</string>
+    <string name="budget_error_not_connected">Nicht verbunden</string>
+    <string name="budget_remaining_label">Verbleibend:</string>
+    <string name="budget_starting_amount">Anfangsbetrag</string>
+    <string name="budget_planned_short">Geplant: %1$s</string>
+    <string name="budget_uncategorized">Ohne Kategorie</string>
+    <string name="budget_stale_banner">Zwischengespeicherte Daten vom %1$s</string>
+
+    <string name="view_header_planned">Geplant</string>
+    <string name="view_header_actual">Tatsächlich</string>
+    <string name="dialog_entry_type_expense">Ausgabe</string>
+    <string name="dialog_entry_type_income">Einnahme</string>
+
+    <string name="about_title">Stapik Budgeting (Android)</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_description">Schreibgeschützte mobile Begleit-App für Stapik Budgeting.</string>
+    <string name="about_author">Sebastian Smoliński</string>
+    <string name="about_source_code">Quellcode auf GitHub ansehen</string>
+
+    <string name="detail_back">Zurück</string>
+
+    <string name="settings_theme_label">Design</string>
+    <string name="theme_classic">Klassisch</string>
+    <string name="theme_modern">Modern</string>
+    <string name="theme_classic_pink">Klassisch Pink</string>
+
+    <string name="menu_connect">Verbinden</string>
+    <string name="menu_about">Über die App</string>
+
+    <string name="error_no_network">Keine Netzwerkverbindung.</string>
+    <string name="error_unauthorized">Ungültige Server-URL oder API-Schlüssel.</string>
+    <string name="error_not_found">Budget wurde auf dem Server nicht gefunden. Überprüfe die Verbindungseinstellungen.</string>
+    <string name="error_cannot_verify">Keine Antwort vom Server - diese Zugangsdaten konnten nicht überprüft werden.</string>
+    <string name="error_unknown">Etwas ist schiefgelaufen: %1$s</string>
+
+    <string name="retry">Erneut versuchen</string>
+</resources>
