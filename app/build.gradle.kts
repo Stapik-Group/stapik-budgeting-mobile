@@ -15,7 +15,7 @@ android {
         minSdk = 26
         targetSdk = 36
         versionCode = 1
-        versionName = "1.0.0"
+        versionName = "1.1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -58,11 +58,17 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.androidx.compose.material.icons.core)
     implementation(libs.datastore.preferences)
-    implementation(libs.retrofit)
-    implementation(libs.okhttp)
-    implementation(libs.okhttp.logging)
     implementation(libs.kotlinx.serialization.json)
-    implementation(libs.retrofit.kotlinx.serialization.converter)
+    implementation("pl.stapik.common:core-cloud")
+    implementation("pl.stapik.common:core-crypto")
+    implementation("pl.stapik.common:core-i18n")
+    implementation("pl.stapik.common:core-model")
+    implementation("pl.stapik.common:core-presentation")
+    implementation("pl.stapik.common:core-settings")
+    implementation("pl.stapik.common:core-sync")
+    implementation("pl.stapik.common:core-theme")
+    implementation("pl.stapik.common:ui-shell")
+    implementation("pl.stapik.common:ui-theme")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)

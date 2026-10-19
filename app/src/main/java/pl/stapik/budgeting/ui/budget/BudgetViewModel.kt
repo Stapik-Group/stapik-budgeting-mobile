@@ -2,7 +2,6 @@ package pl.stapik.budgeting.ui.budget
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import pl.stapik.budgeting.data.config.ApiConfig
 import pl.stapik.budgeting.data.config.ApiConfigStorage
 import pl.stapik.budgeting.data.repository.BudgetFetchOutcome
 import pl.stapik.budgeting.data.repository.BudgetRepository
@@ -51,13 +50,6 @@ class BudgetViewModel(
                 _isRefreshing.value = false
             }
         }
-    }
-
-    suspend fun refreshWithConfig(config: ApiConfig): BudgetFetchOutcome {
-        _uiState.value = BudgetUiState.Loading
-        val outcome = repository.fetchBudget(config)
-        applyOutcome(outcome)
-        return outcome
     }
 
     private fun applyOutcome(outcome: BudgetFetchOutcome) {
