@@ -8,21 +8,25 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.CreationExtras
 import pl.stapik.budgeting.data.cache.DataStoreBudgetCacheStorage
-import pl.stapik.budgeting.data.config.DataStoreApiConfigStorage
+import pl.stapik.budgeting.data.config.ConnectionApiConfigStorage
 import pl.stapik.budgeting.data.repository.BudgetRepository
 import pl.stapik.budgeting.ui.budget.BudgetViewModel
 import pl.stapik.budgeting.ui.root.AppRoot
 import pl.stapik.budgeting.ui.theme.DataStoreThemePreferenceStorage
+import pl.stapik.common.cloud.HttpCloudGateway
+import pl.stapik.common.cloud.OkHttpTransport
+import pl.stapik.common.presentation.ConnectController
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val configStorage = DataStoreApiConfigStorage(applicationContext)
+        val configStorage = ConnectionApiConfigStorage(applicationContext)
         val themeStorage = DataStoreThemePreferenceStorage(applicationContext)
         val cacheStorage = DataStoreBudgetCacheStorage(applicationContext)
-        val repository = BudgetRepository(cacheStorage)
+        val transport = OkHttpTransport()
+        val repository = BudgetRepository(cacheStorage, transport)
 
         val viewModel = ViewModelProvider(
             this,
@@ -39,6 +43,9 @@ class MainActivity : ComponentActivity() {
                 configStorage = configStorage,
                 themeStorage = themeStorage,
                 viewModel = viewModel,
+                newConnectController = { initial ->
+                    ConnectController(configStorage.store, { config -> HttpCloudGateway(config, transport) }, initial)
+                },
             )
         }
     }

@@ -1,5 +1,7 @@
 package pl.stapik.budgeting.util
 
+import pl.stapik.budgeting.BuildConfig
+
 object AppInfo {
-    const val VERSION_NAME = "1.0.0"
+    val VERSION_NAME: String = BuildConfig.VERSION_NAME
 }
